@@ -1,33 +1,21 @@
 package eu.ha3.presencefootsteps.sound.generator;
 
-import com.minelittlepony.api.pony.Pony;
-
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
+/**
+ * NeoForge port: Mine Little Pony is Fabric-only, so this is a no-op stub.
+ */
 public class MineLP {
-    private static boolean checkCompleted = false;
-    private static boolean hasMineLP;
-
     public static boolean hasPonies() {
-        if (!checkCompleted) {
-            checkCompleted = true;
-            hasMineLP = FabricLoader.getInstance().isModLoaded("minelp");
-        }
-
-        return hasMineLP;
+        return false;
     }
 
     public static Locomotion getLocomotion(Entity entity, Locomotion fallback) {
-        return Pony.getManager().getPony(entity)
-                .map(Pony::race)
-                .filter(race -> !race.isHuman())
-                .map(race -> race.hasWings() ? Locomotion.FLYING : Locomotion.QUADRUPED)
-                .orElse(fallback);
+        return fallback;
     }
 
     public static Locomotion getLocomotion(Player ply) {
-        return getLocomotion(ply, Locomotion.BIPED);
+        return Locomotion.BIPED;
     }
 }
