@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+issueTrackerURL = "https://github.com/avpbynf/Presence-Footsteps-NeoForge/issues"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+logoFile = "logo.png"
+description = "${mod_description}"
+displayURL = "https://github.com/avpbynf/Presence-Footsteps-NeoForge"
+credits = "Hurricaaane (Ha3), Sollace, Paint_Ninja, ZCRAFT. Unofficial NeoForge port of Presence Footsteps by Sollace (https://github.com/Sollace/Presence-Footsteps). Includes GUI and settings classes from Kirin by Mine Little Pony (MIT)."
+
+[[mixins]]
+config = "presencefootsteps.mixin.json"
+
+[[accessTransformers]]
+file = "META-INF/accesstransformer.cfg"
+
+[[dependencies.presencefootsteps]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.presencefootsteps]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "CLIENT"
