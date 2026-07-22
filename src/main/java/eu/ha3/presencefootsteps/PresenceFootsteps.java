@@ -51,7 +51,19 @@ public class PresenceFootsteps {
         return instance;
     }
 
-    private final Path pfFolder = GamePaths.getConfigDirectory().resolve("presencefootsteps");
+    // NeoForge port: upstream's update checker used to create this directory as
+    // a side effect. Kirin's config adapter does not create parent directories,
+    // so without this the config would never be written to disk.
+    private final Path pfFolder = createDirectories(GamePaths.getConfigDirectory().resolve("presencefootsteps"));
+
+    private static Path createDirectories(Path path) {
+        try {
+            java.nio.file.Files.createDirectories(path);
+        } catch (java.io.IOException e) {
+            logger.error("Could not create config directory {}", path, e);
+        }
+        return path;
+    }
 
     private final PFConfig config = new PFConfig(pfFolder.resolve("userconfig.json"), this);
     private final SoundEngine engine = new SoundEngine(config);
