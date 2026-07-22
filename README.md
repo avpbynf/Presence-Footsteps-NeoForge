@@ -1,10 +1,12 @@
-# Presence-Footsteps
-[![Build Status](https://github.com/Sollace/Presence-Footsteps/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/MineLittlePony/Kirin/actions/workflows/gradle-build.yml)
-[![Version](https://img.shields.io/github/v/release/Sollace/Presence-Footsteps)](https://github.com/Sollace/Presence-Footsteps/releases/latest)
+# Presence Footsteps [NeoForge]
 ![License](https://img.shields.io/badge/license-Polyform%20Shield%201.0%20-green)
-![](https://img.shields.io/badge/api-fabric-orange.svg)
+![](https://img.shields.io/badge/api-neoforge-orange.svg)
 
 _..An Overly complicated Sound Mod..._
+
+---
+
+This is an **unofficial NeoForge port** of [Presence Footsteps by Sollace](https://github.com/Sollace/Presence-Footsteps), itself the continuation of Huricaaan (Ha3)'s original mod. Credits: Hurricaaane (Ha3), Sollace, Paint_Ninja, ZCRAFT. The options screen and settings system embed classes from [Kirin](https://github.com/MineLittlePony/Kirin) by Mine Little Pony (MIT). Presence Footsteps itself is licensed under the PolyForm Shield License 1.0.0 (see LICENSE.MD).
 
 ---
 
