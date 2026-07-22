@@ -9,7 +9,6 @@ import eu.ha3.presencefootsteps.sound.SoundEngine;
 import eu.ha3.presencefootsteps.sound.generator.Locomotion;
 import eu.ha3.presencefootsteps.world.PrimitiveLookup;
 import eu.ha3.presencefootsteps.world.SoundsKey;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.debug.DebugScreenDisplayer;
@@ -49,7 +48,7 @@ public class PFDebugHud implements DebugScreenEntry {
 
         finalList.addToGroup(DebugScreenEntries.SOUND_MOOD, List.of(
                 "",
-                ChatFormatting.UNDERLINE + "Presence Footsteps " + FabricLoader.getInstance().getModContainer("presencefootsteps").get().getMetadata().getVersion(),
+                ChatFormatting.UNDERLINE + "Presence Footsteps " + net.neoforged.fml.ModList.get().getModContainerById("presencefootsteps").map(c -> c.getModInfo().getVersion().toString()).orElse("?"),
                 String.format("Enabled: %s, Multiplayer: %s, Running: %s", config.getEnabled(), config.getEnabledMP(), engine.isRunning(client)),
                 String.format("Volume: Global[G: %s%%, W: %s%%, F: %s%%]",
                         config.getGlobalVolume(),
