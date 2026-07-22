@@ -8,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.debug.DebugEntryNoop;
-import net.minecraft.client.gui.components.debug.DebugScreenEntries;
 import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
@@ -21,23 +20,25 @@ import org.lwjgl.glfw.GLFW;
 import com.minelittlepony.common.util.GamePaths;
 import com.mojang.blaze3d.platform.InputConstants;
 
-import eu.ha3.mc.quick.update.UpdateChecker;
-import eu.ha3.mc.quick.update.UpdaterConfig;
 import eu.ha3.presencefootsteps.sound.SoundEngine;
 import eu.ha3.presencefootsteps.util.Edge;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
-import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.server.packs.PackType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.AddClientReloadListenersEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RegisterDebugEntriesEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.NeoForge;
 
-public class PresenceFootsteps implements ClientModInitializer {
+@Mod(value = PresenceFootsteps.MODID, dist = Dist.CLIENT)
+public class PresenceFootsteps {
     public static final Logger logger = LogManager.getLogger("PFSolver");
 
-    private static final String MODID = "presencefootsteps";
+    static final String MODID = "presencefootsteps";
     private static final KeyMapping.Category KEY_BINDING_CATEGORY = KeyMapping.Category.register(id("category"));
-    private static final String UPDATER_ENDPOINT = "https://raw.githubusercontent.com/Sollace/Presence-Footsteps/master/version/latest.json";
 
     public static final Component MOD_NAME = Component.translatable("mod.presencefootsteps.name");
 
@@ -57,14 +58,6 @@ public class PresenceFootsteps implements ClientModInitializer {
     private final PFConfig config = new PFConfig(pfFolder.resolve("userconfig.json"), this);
     private final SoundEngine engine = new SoundEngine(config);
     private final PFDebugHud debugHud = new PFDebugHud(engine);
-
-    private final UpdaterConfig updaterConfig = new UpdaterConfig(pfFolder.resolve("updater.json"));
-    private final UpdateChecker updater = new UpdateChecker(updaterConfig, MODID, UPDATER_ENDPOINT, (newVersion, _) -> {
-        showSystemToast(
-                Component.translatable("pf.update.title"),
-                Component.translatable("pf.update.text", newVersion.version().getFriendlyString(), newVersion.minecraft().getFriendlyString())
-        );
-    });
 
     private final KeyMapping optionsKeyBinding = new KeyMapping("key.presencefootsteps.settings", InputConstants.Type.KEYSYM, InputConstants.KEY_F10, KEY_BINDING_CATEGORY);
     private final KeyMapping toggleKeyBinding = new KeyMapping("key.presencefootsteps.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, KEY_BINDING_CATEGORY);
@@ -87,8 +80,18 @@ public class PresenceFootsteps implements ClientModInitializer {
 
     private final AtomicBoolean configChanged = new AtomicBoolean();
 
-    public PresenceFootsteps() {
+    public PresenceFootsteps(IEventBus modBus, ModContainer container) {
         instance = this;
+
+        config.load();
+        config.onChangedExternally(_ -> configChanged.set(true));
+
+        modBus.addListener(this::onRegisterDebugEntries);
+        modBus.addListener(this::onRegisterKeyMappings);
+        modBus.addListener(this::onAddClientReloadListeners);
+        NeoForge.EVENT_BUS.addListener((ClientTickEvent.Post event) -> onTick(Minecraft.getInstance()));
+
+        container.registerExtensionPoint(IConfigScreenFactory.class, (c, parent) -> new PFOptionsScreen(parent));
     }
 
     public PFDebugHud getDebugHud() {
@@ -107,24 +110,19 @@ public class PresenceFootsteps implements ClientModInitializer {
         return optionsKeyBinding;
     }
 
-    public UpdateChecker getUpdateChecker() {
-        return updater;
+    private void onRegisterDebugEntries(RegisterDebugEntriesEvent event) {
+        event.register(PFDebugHud.ID, debugHud);
+        event.register(SoundEngine.DEBUG_VISUALISER_ID, new DebugEntryNoop());
     }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onInitializeClient() {
-        updaterConfig.load();
-        config.load();
-        config.onChangedExternally(_ -> configChanged.set(true));
+    private void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
+        event.register(optionsKeyBinding);
+        event.register(toggleKeyBinding);
+        event.register(debugToggleKeyBinding);
+    }
 
-        KeyMappingHelper.registerKeyMapping(optionsKeyBinding);
-        KeyMappingHelper.registerKeyMapping(toggleKeyBinding);
-        KeyMappingHelper.registerKeyMapping(debugToggleKeyBinding);
-        ClientTickEvents.END_CLIENT_TICK.register(this::onTick);
-        ResourceLoader.get(PackType.CLIENT_RESOURCES).registerReloadListener(SoundEngine.ID, engine);
-        DebugScreenEntries.register(PFDebugHud.ID, debugHud);
-        DebugScreenEntries.register(SoundEngine.DEBUG_VISUALISER_ID, new DebugEntryNoop());
+    private void onAddClientReloadListeners(AddClientReloadListenersEvent event) {
+        event.addListener(SoundEngine.ID, engine);
     }
 
     private void onTick(Minecraft client) {
@@ -144,10 +142,6 @@ public class PresenceFootsteps implements ClientModInitializer {
             }
 
             engine.onFrame(client, cameraEntity);
-
-            if (!FabricLoader.getInstance().isModLoaded("modmenu")) {
-                updater.attempt();
-            }
         });
     }
 
