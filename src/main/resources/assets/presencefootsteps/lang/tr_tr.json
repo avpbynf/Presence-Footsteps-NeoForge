@@ -17,8 +17,6 @@
 	"menu.pf.report.concise": "Özetli rapor",
 	"pf.report.save": "Dosya %s olarak kaydedildi",
 	"pf.report.error": "Rapor oluşturulamadı: %s",
-	"pf.update.title": "Bir Güncelleme Var",
-	"pf.update.text": "Presence Footsteps %s%d (mc%s için)",
 	
 	"subtitles.pf.footsteps": "Ayak adımları",
 	"subtitles.pf.wood_squeak": "Tahta gıcırdıyor",
