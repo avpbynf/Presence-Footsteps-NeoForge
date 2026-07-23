@@ -505,7 +505,7 @@
 	"minecraft:mud_brick_stairs": "brickstone",
 	"minecraft:mud_brick_slab": "brickstone",
 	"minecraft:mud_brick_wall.bigger": "brickstone",
-	"minecraft:mud_brick_wall": "NOT_EMITTED",
+	"minecraft:mud_brick_wall": "NOT_EMITTER",
 
 	"minecraft:spore_blossom": "NOT_EMITTER",
 	"minecraft:hanging_roots": "NOT_EMITTER",
@@ -524,7 +524,7 @@
 	"minecraft:mycelium": "grass",
 	"minecraft:lily_pad": "waterfine",
 	"minecraft:lily_pad.carpet": "waterfine",
-	"minecraft:frogspawn": "NON_EMITTER",
+	"minecraft:frogspawn": "NOT_EMITTER",
 
 	"minecraft:nether_bricks": "brickstone",
 	"minecraft:cracked_nether_bricks": "brickstone",
