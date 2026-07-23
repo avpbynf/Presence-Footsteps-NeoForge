@@ -38,7 +38,7 @@ public class PresenceFootsteps {
     public static final Logger logger = LogManager.getLogger("PFSolver");
 
     static final String MODID = "presencefootsteps";
-    private static final KeyMapping.Category KEY_BINDING_CATEGORY = KeyMapping.Category.register(id("category"));
+    private static final KeyMapping.Category KEY_BINDING_CATEGORY = new KeyMapping.Category(id("category"));
 
     public static final Component MOD_NAME = Component.translatable("mod.presencefootsteps.name");
 
@@ -128,6 +128,7 @@ public class PresenceFootsteps {
     }
 
     private void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
+        event.registerCategory(KEY_BINDING_CATEGORY);
         event.register(optionsKeyBinding);
         event.register(toggleKeyBinding);
         event.register(debugToggleKeyBinding);

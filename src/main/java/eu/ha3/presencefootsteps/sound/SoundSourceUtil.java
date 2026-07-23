@@ -36,6 +36,6 @@ public final class SoundSourceUtil {
 
     public static @Nullable SoundEvent getStepSoundAtPosition(BlockPos pos) {
         @Nullable ClientLevel world = Minecraft.getInstance().level;
-        return world == null ? null : world.getBlockState(pos).getSoundType().getStepSound();
+        return world == null ? null : world.getBlockState(pos).getSoundType(world, pos, null).getStepSound();
     }
 }
