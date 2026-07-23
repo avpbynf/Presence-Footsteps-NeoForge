@@ -1,5 +1,4 @@
 {
-	"modmenu.descriptionTranslation.presencefootsteps": "足音MOD",
 	"mod.presencefootsteps.name": "Presence Footsteps",
 	"key.category.presencefootsteps.category": "Presence Footsteps",
 	"key.presencefootsteps.settings": "設定を開く",
@@ -57,11 +56,6 @@
 	"menu.pf.group.sound_packs": "サウンドパック",
 	"pf.report.save": "保存されたファイル: %s",
 	"pf.report.error": "レポートの生成に失敗しました: %s",
-	"pf.update.title": "アップデートが利用可能です",
-	"pf.update.text": "Presence Footsteps %s",
-	"pf.update.checking": "アップデートを確認しています...",
-	"pf.update.updates_available": "アップデートが利用可能です!\n マインクラフト%s 向けのPresence Footsteps %s",
-	"pf.update.up_to_date": "最新バージョンです",
 	"subtitles.pf.footsteps": "足音",
 	"subtitles.pf.wood_squeak": "木が軋む",
 	"subtitles.pf.wood_bends": "木が曲がる",

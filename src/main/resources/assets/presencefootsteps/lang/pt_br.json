@@ -59,11 +59,6 @@
     "menu.pf.group.sound_packs": "Pacotes de sons",
     "pf.report.save": "Arquivo salvo como: %s",
     "pf.report.error": "Falha ao gerar relatório: %s",
-    "pf.update.title": "Há uma atualização disponível!",
-    "pf.update.text": "Presence Footsteps %s",
-    "pf.update.checking": "Verificando atualizações...",
-    "pf.update.updates_available": "Há uma atualização disponível!\n Presence Footsteps %s para MC%s",
-    "pf.update.up_to_date": "Você está na versão mais recente.",
     "subtitles.pf.footsteps": "Passos",
     "subtitles.pf.wood_squeak": "Madeira range",
     "subtitles.pf.wood_bends": "Madeira flexiona",
@@ -85,7 +80,6 @@
     "subtitles.pf.glass_croak": "Vidro estala",
     "subtitles.pf.chain": "Corrente tilinta",
     "subtitles.pf.stone_crack": "Pedra despedaça",
-    "subtitles.pf.wax_squeak": "Cera range",
+    "subtitles.pf.wax_squeak": "Cera range"
 
-    "modmenu.descriptionTranslation.presencefootsteps": "Um mod de som mais complicado do que se imagina."
 }
