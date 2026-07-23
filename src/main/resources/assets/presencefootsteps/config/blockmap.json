@@ -429,6 +429,7 @@
 	"minecraft:small_amethyst_bud": "chimes",
 	"minecraft:small_amethyst_bud.foliage": "chimes",
 
+	"minecraft:glow_lichen": "NOT_EMITTER",
 	"minecraft:glow_lichen.foliage[down=true]": "grass",
 	"minecraft:glow_lichen.foliage": "NOT_EMITTER",
 
@@ -461,6 +462,7 @@
 	"#minecraft:ice": "ice",
 
 	"minecraft:cactus": "grass",
+	"minecraft:cactus_flower": "NOT_EMITTER",
 	"minecraft:cactus_flower.foliage": "glass",
 	"minecraft:clay": "dirt",
 	"minecraft:jukebox": "woodutility",
