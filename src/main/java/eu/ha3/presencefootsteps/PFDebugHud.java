@@ -90,7 +90,7 @@ public class PFDebugHud implements DebugScreenEntry {
                 finalList.addToGroup(DebugScreenEntries.LOOKING_AT_BLOCK_STATE, BuiltInRegistries.BLOCK.getKey(base.getBlock()).toString());
             }
             finalList.addToGroup(DebugScreenEntries.LOOKING_AT_BLOCK_STATE, List.of(
-                    String.format(Locale.ENGLISH, "Primitive Key: %s", PrimitiveLookup.getKey(state.getSoundType())),
+                    String.format(Locale.ENGLISH, "Primitive Key: %s", PrimitiveLookup.getKey(state.getSoundType(client.level, pos, client.player))),
                     "Surface Condition: " + (
                             hasLava ? ChatFormatting.RED + "LAVA"
                                     : hasWater ? ChatFormatting.BLUE + "WET"
@@ -98,7 +98,7 @@ public class PFDebugHud implements DebugScreenEntry {
                     )
             ));
             finalList.addToGroup(DebugScreenEntries.LOOKING_AT_BLOCK_STATE, renderSoundList("Step Sounds[B]", engine.getIsolator().globalBlocks().getAssociations(state)));
-            finalList.addToGroup(DebugScreenEntries.LOOKING_AT_BLOCK_STATE, renderSoundList("Step Sounds[P]", engine.getIsolator().primitives().getAssociations(state.getSoundType().getStepSound())));
+            finalList.addToGroup(DebugScreenEntries.LOOKING_AT_BLOCK_STATE, renderSoundList("Step Sounds[P]", engine.getIsolator().primitives().getAssociations(state.getSoundType(client.level, pos, client.player).getStepSound())));
             finalList.addToGroup(DebugScreenEntries.LOOKING_AT_BLOCK_STATE, "");
         }
 
