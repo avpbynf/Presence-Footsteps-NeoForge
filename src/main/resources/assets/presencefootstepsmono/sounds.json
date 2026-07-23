@@ -793,5 +793,102 @@
       "presencefootstepsmono:wood/wood_walk8",
       "presencefootstepsmono:wood/wood_walk9"
     ]
+  },
+  "pf_presence.crumbly_stone.crumbly_stone_walk": {
+    "category": "master",
+    "subtitle": "subtitles.pf.stone_crack",
+    "sounds": [
+      "presencefootstepsmono:weakice/weakice_walk1",
+      "presencefootstepsmono:weakice/weakice_walk10",
+      "presencefootstepsmono:weakice/weakice_walk2",
+      "presencefootstepsmono:weakice/weakice_walk3",
+      "presencefootstepsmono:weakice/weakice_walk4",
+      "presencefootstepsmono:weakice/weakice_walk5",
+      "presencefootstepsmono:weakice/weakice_walk6",
+      "presencefootstepsmono:weakice/weakice_walk7",
+      "presencefootstepsmono:weakice/weakice_walk8",
+      "presencefootstepsmono:weakice/weakice_walk9"
+    ]
+  },
+  "pf_presence.fire.flames": {
+    "category": "master",
+    "subtitle": "subtitles.pf.fire_flames",
+    "sounds": [
+      "presencefootstepsmono:brush/brush_through1",
+      "presencefootstepsmono:brush/brush_through10",
+      "presencefootstepsmono:brush/brush_through11",
+      "presencefootstepsmono:brush/brush_through2",
+      "presencefootstepsmono:brush/brush_through3",
+      "presencefootstepsmono:brush/brush_through4",
+      "presencefootstepsmono:brush/brush_through5",
+      "presencefootstepsmono:brush/brush_through6",
+      "presencefootstepsmono:brush/brush_through7",
+      "presencefootstepsmono:brush/brush_through8",
+      "presencefootstepsmono:brush/brush_through9"
+    ]
+  },
+  "pf_presence.sulfur.sulfur_land": {
+    "category": "master",
+    "subtitle": "subtitles.pf.sulfur.crunch",
+    "sounds": [
+      "presencefootstepsmono:gravel/gravel_land1",
+      "presencefootstepsmono:gravel/gravel_land2"
+    ]
+  },
+  "pf_presence.sulfur.sulfur_run": {
+    "category": "master",
+    "subtitle": "subtitles.pf.sulfur.crunch",
+    "sounds": [
+      "presencefootstepsmono:gravel/gravel_run1",
+      "presencefootstepsmono:gravel/gravel_run10",
+      "presencefootstepsmono:gravel/gravel_run11",
+      "presencefootstepsmono:gravel/gravel_run2",
+      "presencefootstepsmono:gravel/gravel_run3",
+      "presencefootstepsmono:gravel/gravel_run4",
+      "presencefootstepsmono:gravel/gravel_run5",
+      "presencefootstepsmono:gravel/gravel_run6",
+      "presencefootstepsmono:gravel/gravel_run7",
+      "presencefootstepsmono:gravel/gravel_run8",
+      "presencefootstepsmono:gravel/gravel_run9"
+    ]
+  },
+  "pf_presence.sulfur.sulfur_walk": {
+    "category": "master",
+    "subtitle": "subtitles.pf.sulfur.crunch",
+    "sounds": [
+      "presencefootstepsmono:gravel/gravel_walk1",
+      "presencefootstepsmono:gravel/gravel_walk10",
+      "presencefootstepsmono:gravel/gravel_walk11",
+      "presencefootstepsmono:gravel/gravel_walk2",
+      "presencefootstepsmono:gravel/gravel_walk3",
+      "presencefootstepsmono:gravel/gravel_walk4",
+      "presencefootstepsmono:gravel/gravel_walk5",
+      "presencefootstepsmono:gravel/gravel_walk6",
+      "presencefootstepsmono:gravel/gravel_walk7",
+      "presencefootstepsmono:gravel/gravel_walk8",
+      "presencefootstepsmono:gravel/gravel_walk9"
+    ]
+  },
+  "pf_presence.sulfur.sulfur_wander": {
+    "category": "master",
+    "subtitle": "subtitles.pf.sulfur.crunch",
+    "sounds": [
+      "presencefootstepsmono:gravel/gravel_wander1",
+      "presencefootstepsmono:gravel/gravel_wander2",
+      "presencefootstepsmono:gravel/gravel_wander3"
+    ]
+  },
+  "pf_presence.waxedsurface.waxedsurface_wander": {
+    "category": "master",
+    "subtitle": "subtitles.pf.wax_squeak",
+    "sounds": [
+      "presencefootstepsmono:squeakywood/squeakywood_wander1",
+      "presencefootstepsmono:squeakywood/squeakywood_wander2",
+      "presencefootstepsmono:squeakywood/squeakywood_wander3",
+      "presencefootstepsmono:squeakywood/squeakywood_wander4",
+      "presencefootstepsmono:squeakywood/squeakywood_wander5",
+      "presencefootstepsmono:squeakywood/squeakywood_wander6",
+      "presencefootstepsmono:squeakywood/squeakywood_wander7"
+    ]
   }
 }
