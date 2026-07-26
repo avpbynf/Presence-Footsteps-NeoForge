@@ -49,8 +49,13 @@ The block registry is read from any jar containing
 ModDevGradle, use the patched jar produced during a normal build:
 
 ```bash
-java scripts/CheckBlockCoverage.java . build/moddev/artifacts/minecraft-patched-<neo-version>-merged.jar build/moddev/artifacts/minecraft-patched-<neo-version>-sources.jar
+java scripts/CheckBlockCoverage.java . build/moddev/artifacts/neoforge-<neo-version>-client-extra-aka-minecraft-resources.jar build/moddev/artifacts/neoforge-<neo-version>-sources.jar
 ```
+
+On this branch the assets live in the `client-extra` jar, not in the merged
+one; passing the merged jar reports zero blocks and turns every blockmap key
+into a false error. On the 26.x branches the same data is in
+`minecraft-patched-<neo-version>-merged.jar`.
 
 The sources jar argument is optional and only enables the entity id checks.
 Exit code 1 on stale/unknown ids; unmapped blocks alone do not fail the run.
