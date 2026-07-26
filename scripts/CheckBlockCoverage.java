@@ -86,9 +86,12 @@ public class CheckBlockCoverage {
 
     void loadEntities(Path sourcesJar) throws IOException {
         try (ZipFile zip = new ZipFile(sourcesJar.toFile())) {
-            // 26.x keeps the id literals in EntityTypeIds (create("id")); older
-            // versions inline them in EntityTypes (register("id", ...)).
-            for (String file : new String[] {"net/minecraft/world/entity/EntityTypeIds.java", "net/minecraft/world/entity/EntityTypes.java"}) {
+            // 26.2 keeps the id literals in EntityTypeIds (create("id")); 26.1 and
+            // older versions inline them in EntityType/EntityTypes (register("id", ...)).
+            for (String file : new String[] {
+                    "net/minecraft/world/entity/EntityTypeIds.java",
+                    "net/minecraft/world/entity/EntityType.java",
+                    "net/minecraft/world/entity/EntityTypes.java"}) {
                 ZipEntry entry = zip.getEntry(file);
                 if (entry == null) {
                     continue;
