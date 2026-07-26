@@ -827,57 +827,6 @@
       "presencefootstepsmono:brush/brush_through9"
     ]
   },
-  "pf_presence.sulfur.sulfur_land": {
-    "category": "master",
-    "subtitle": "subtitles.pf.sulfur.crunch",
-    "sounds": [
-      "presencefootstepsmono:gravel/gravel_land1",
-      "presencefootstepsmono:gravel/gravel_land2"
-    ]
-  },
-  "pf_presence.sulfur.sulfur_run": {
-    "category": "master",
-    "subtitle": "subtitles.pf.sulfur.crunch",
-    "sounds": [
-      "presencefootstepsmono:gravel/gravel_run1",
-      "presencefootstepsmono:gravel/gravel_run10",
-      "presencefootstepsmono:gravel/gravel_run11",
-      "presencefootstepsmono:gravel/gravel_run2",
-      "presencefootstepsmono:gravel/gravel_run3",
-      "presencefootstepsmono:gravel/gravel_run4",
-      "presencefootstepsmono:gravel/gravel_run5",
-      "presencefootstepsmono:gravel/gravel_run6",
-      "presencefootstepsmono:gravel/gravel_run7",
-      "presencefootstepsmono:gravel/gravel_run8",
-      "presencefootstepsmono:gravel/gravel_run9"
-    ]
-  },
-  "pf_presence.sulfur.sulfur_walk": {
-    "category": "master",
-    "subtitle": "subtitles.pf.sulfur.crunch",
-    "sounds": [
-      "presencefootstepsmono:gravel/gravel_walk1",
-      "presencefootstepsmono:gravel/gravel_walk10",
-      "presencefootstepsmono:gravel/gravel_walk11",
-      "presencefootstepsmono:gravel/gravel_walk2",
-      "presencefootstepsmono:gravel/gravel_walk3",
-      "presencefootstepsmono:gravel/gravel_walk4",
-      "presencefootstepsmono:gravel/gravel_walk5",
-      "presencefootstepsmono:gravel/gravel_walk6",
-      "presencefootstepsmono:gravel/gravel_walk7",
-      "presencefootstepsmono:gravel/gravel_walk8",
-      "presencefootstepsmono:gravel/gravel_walk9"
-    ]
-  },
-  "pf_presence.sulfur.sulfur_wander": {
-    "category": "master",
-    "subtitle": "subtitles.pf.sulfur.crunch",
-    "sounds": [
-      "presencefootstepsmono:gravel/gravel_wander1",
-      "presencefootstepsmono:gravel/gravel_wander2",
-      "presencefootstepsmono:gravel/gravel_wander3"
-    ]
-  },
   "pf_presence.waxedsurface.waxedsurface_wander": {
     "category": "master",
     "subtitle": "subtitles.pf.wax_squeak",
