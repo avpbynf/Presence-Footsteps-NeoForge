@@ -2,6 +2,7 @@
   "mod.presencefootsteps.name": "Presence Footsteps",
   "key.category.presencefootsteps.category": "Presence Footsteps",
 	"key.presencefootsteps.settings": "Open Settings",
+	"key.presencefootsteps.debug_toggle": "Toggle Debug Info",
 	"key.presencefootsteps.toggle": "Toggle Mod",
 	"key.presencefootsteps.toggle.enabled": "Sounds Enabled",
 	"key.presencefootsteps.toggle.disabled": "Sounds Disabled",
